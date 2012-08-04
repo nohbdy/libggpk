@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="../../include/ggpk/Archive.h" />
     <ClInclude Include="../../include/ggpk/Node.h" />
+    <ClInclude Include="..\..\src\defines.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="../../src/Archive.cpp" />

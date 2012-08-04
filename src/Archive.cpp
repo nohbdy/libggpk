@@ -4,6 +4,7 @@
 #include <QString>
 #include <QStringList>
 
+#include "defines.h"
 #include "Archive.h"
 #include "Node.h"
 
@@ -20,7 +21,7 @@ struct ArchiveHeader {
 	int32_t unknown;		// version? or number of file/dir offsets in the header? (was 0x2 as of July 29, 2012)
 	int64_t root_offset;	// Pointer to the root PDIR node
 	int64_t unknown_14;		// As of July 29, 2012 this points to a FREE block
-} __attribute__((packed));
+} PACK_STRUCT;
 
 Archive::~Archive() {
 	if (root_ != NULL) {

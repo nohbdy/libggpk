@@ -7,6 +7,7 @@
 #include <QChar>
 #include <QString>
 
+#include "defines.h"
 #include "Node.h"
 #include "Archive.h"
 
@@ -21,36 +22,22 @@ struct NodeHeader {
 	int32_t total_length;	// Total length of the node
 	int32_t node_type;		// Node type identifier
 	int32_t name_length;	// Length of the node's name
-} __attribute__((packed));
+} PACK_STRUCT;
 
 struct DirNode {
 	int32_t unknown;	// 32-bits of something, not sure what!
 	int64_t offset;		// Offset in archive to this node
-} __attribute__((packed));
-
-// Convert from 16-bit wide characters to a std::string
-std::string ToNarrow( const uint16_t *s, char dfault = '?', const std::locale& loc = std::locale() ) {
-  std::ostringstream stm;
-
-  while( *s != 0 ) {
-    stm << std::use_facet< std::ctype<uint16_t> >( loc ).narrow( *s++, dfault );
-  }
-  return stm.str();
-}
+} PACK_STRUCT;
 
 // Read in the name data, and convert it from wide characters into a std::string
 inline std::string read_node_name(QFile* file, int name_length) {
-	// printf("sizeof(wchar_t) = %d\n", sizeof(wchar_t));
-	std::string result;
 	QChar* name_data = new QChar[name_length];
 
 	file->read((char*)name_data, 2 * name_length);
 
-	// result = ToNarrow((uint16_t*)name_data);
 	QString qstr(name_data, name_length - 1); // size param shouldn't include the NULL
 
 	delete [] name_data;
-	// return result;
 	return qstr.toStdString();
 }
 
