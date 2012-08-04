@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libggpk", "libggpk.vcxproj", "{5BA87C18-B43A-4908-80FC-6210BA8CFE4B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ggpk", "ggpk.vcxproj", "{41F99F91-9770-417A-B263-04E247257B5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BA87C18-B43A-4908-80FC-6210BA8CFE4B} = {5BA87C18-B43A-4908-80FC-6210BA8CFE4B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BA87C18-B43A-4908-80FC-6210BA8CFE4B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5BA87C18-B43A-4908-80FC-6210BA8CFE4B}.Debug|Win32.Build.0 = Debug|Win32
+		{5BA87C18-B43A-4908-80FC-6210BA8CFE4B}.Release|Win32.ActiveCfg = Release|Win32
+		{5BA87C18-B43A-4908-80FC-6210BA8CFE4B}.Release|Win32.Build.0 = Release|Win32
+		{41F99F91-9770-417A-B263-04E247257B5C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{41F99F91-9770-417A-B263-04E247257B5C}.Debug|Win32.Build.0 = Debug|Win32
+		{41F99F91-9770-417A-B263-04E247257B5C}.Release|Win32.ActiveCfg = Release|Win32
+		{41F99F91-9770-417A-B263-04E247257B5C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
