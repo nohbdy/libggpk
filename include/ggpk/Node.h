@@ -2,7 +2,7 @@
 #define _GGPK_NODE_H_
 
 #pragma once
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 #include <vector>
 
